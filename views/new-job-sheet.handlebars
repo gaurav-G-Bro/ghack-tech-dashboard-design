@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>New Job Sheet</title>
+  <link rel="stylesheet" href="/css/edit-job-sheet.css">
+</head>
+<body>
+  <div class="container">
+    <div class="job-sheet-form">
+      <h2>CREATE NEW JOB SHEET</h2>
+      <form id="jobSheetForm" method="POST" action="/jobsheet" enctype="multipart/form-data">
+        <div class="form-group">
+          <label for="clientName" style="margin-top: 1rem;">Client Name:</label>
+          <input type="text" id="clientName" name="clientName" value="{{jobsheet.name}}" required>
+        </div>
+
+        <div class="form-group">
+          <label for="contactInfo">Contact Info (Phone 10nos):</label>
+          <input type="text" id="contactInfo" name="contactInfo" value="{{jobsheet.contact}}" required>
+        </div>
+
+        <div class="form-group">
+          <label for="receivedDate">Received Date:</label>
+          <input type="date" id="receivedDate" name="receivedDate" value="{{jobsheet.receivedDate}}" required>
+        </div>
+
+        <div class="form-group">
+          <label for="inventoryReceived">Inventory Received:</label>
+          <input type="text" id="inventoryReceived" name="inventoryReceived" value="{{jobsheet.inventory}}">
+        </div>
+
+        <div class="form-group">
+          <label for="inventoryImage">Upload Inventory Image/Document/Video:</label>
+          <input type="file" id="inventoryImage" name="inventoryImage" value="{{jobsheet.inventoryData}}">
+        </div>
+
+        <div class="form-group">
+          <label for="reportedIssues">Reported Issues:</label>
+          <textarea id="reportedIssues" name="reportedIssues">{{jobsheet.issues}}</textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="clientNotes">Client Notes:</label>
+          <textarea id="clientNotes" name="clientNotes">{{jobsheet.notes}}</textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="assignedTechnician">Assigned Technician:</label>
+          <input type="text" id="assignedTechnician" name="assignedTechnician" value="{{jobsheet.technician}}">
+        </div>
+
+        <div class="form-group">
+          <label for="deadline">Deadline:</label>
+          <input type="date" id="deadline" name="deadline" value="{{jobsheet.deadline}}">
+        </div>
+
+        <div class="form-group">
+          <label for="estimatedAmount">Estimated Amount:</label>
+          <input type="text" id="estimatedAmount" name="estimatedAmount" value="{{jobsheet.amount}}">
+        </div>
+
+        <div class="form-group">
+          <label for="status">Status:</label>
+          <select id="status" name="status">
+            <option value="Pending" {{#if (eq jobsheet.status "Pending")}}selected{{/if}}>Pending</option>
+            <option value="In Progress" {{#if (eq jobsheet.status "In Progress")}}selected{{/if}}>In Progress</option>
+            <option value="Completed" {{#if (eq jobsheet.status "Completed")}}selected{{/if}}>Completed</option>
+
+          </select>
+        </div>
+
+        <button type="submit" class="btn-submit">Save Job Sheet</button>
+      </form>
+    </div>
+  </div>
+  <script src="/js/main.js"></script>
+</body>
+</html>

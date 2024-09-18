@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>View Job Sheet</title>
+  <link rel="stylesheet" href="/css/viewJobSheet.css">
+</head>
+<body>
+  <div class="container">
+  <div class="card">
+    <h2 class="title">VIEW JOB SHEET</h2>
+
+    <table class="job-sheet-table">
+      <tr>
+        <td class="label">Client Name:</td>
+        <td>{{jobsheet.name}}</td>
+      </tr>
+      <tr>
+        <td class="label">Contact Info:</td>
+        <td>{{jobsheet.contact}}</td>
+      </tr>
+      <tr>
+        <td class="label">Received Date:</td>
+        <td>{{jobsheet.receivedDate}}</td>
+      </tr>
+      <tr>
+        <td class="label">Inventory Received:</td>
+        <td>{{jobsheet.inventory}}</td>
+      </tr>
+      <tr>
+        <td class="label">Inventory Image/Document/Video:</td>
+        <td><a href="{{jobsheet.inventoryData}}" target="_blank" style="text-decoration: none;">View File</a></td>
+      </tr>
+      <tr>
+        <td class="label">Reported Issues:</td>
+        <td>{{jobsheet.issues}}</td>
+      </tr>
+      <tr>
+        <td class="label">Client Notes:</td>
+        <td>{{jobsheet.notes}}</td>
+      </tr>
+      <tr>
+        <td class="label">Assigned Technician:</td>
+        <td>{{jobsheet.technician}}</td>
+      </tr>
+      <tr>
+        <td class="label">Estimated Amount:</td>
+        <td>{{jobsheet.amount}}</td>
+      </tr>
+      <tr>
+        <td class="label">Deadline:</td>
+        <td>{{jobsheet.deadline}}</td>
+      </tr>
+      <tr>
+        <td class="label">Status:</td>
+        <td>{{jobsheet.status}}</td>
+      </tr>
+    </table>
+
+    <div class="note-section">
+      <label for="note">Add or Update Note:</label>
+      <textarea id="note">{{jobsheet.note}}</textarea>
+      <button class="save-note-btn">Save Note</button>
+    </div>
+
+    <div class="actions">
+      <button class="edit-btn" onclick="window.location.href='/jobsheet/{{jobsheet.id}}/edit'">Edit</button>
+      <button class="delete-btn">Delete</button>
+    </div>
+
+    <div class="actions-back-btn">
+        <button class="back-btn"><a href="/">Back</button>
+    </div>
+  </div>
+
+  <div class="save-pdf-section">
+      <button class="save-pdf-btn"><a href="/jobsheet/{{jobsheet.id}}/pdf" target="_blank" class="btn btn-primary">Save as PDF</a>
+</button>
+    </div>
+</div>
+
+
+
+  <script src="/js/viewJobSheet.js"></script>
+</body>
+</html>

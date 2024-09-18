@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Management Dashboard</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>HARDIK TRADERS - CLIENT MANAGEMENT DASHBOARD</h1>
+        </header>
+
+        <div class="search-bar">
+            <input type="text" placeholder="Search by Client Name or ID..." id="search-input">
+            <button id="search-btn">Search</button>
+        </div>
+
+        <div class="button-section">
+            <button id="new-job-btn" onclick="window.location.href='/jobsheet/new'">New Job Sheet</button>
+        </div>
+
+        <table class="client-table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Client Id</th>
+                    <th>Client Name</th>
+                    <th>Contact Info</th>
+                    <th>Received Date</th>
+                    <th>Inventory Received</th>
+                    <th>Reported Issues</th>
+                    <th>Client Notes</th>
+                    <th>Assigned Technician</th>
+                    <th>Estimated Amount</th>
+                    <th>Deadline</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="client-data">
+            </tbody>
+        </table>
+
+
+        <footer class="footer">
+            <p>© 2024 Hardik Traders</p>
+        </footer>
+    </div>
+
+    <script src="/js/main.js"></script>
+</body>
+</html>
